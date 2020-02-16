@@ -1,5 +1,10 @@
 # DjangoProject
 
+## Screen Shot
+
+![](https://i.imgur.com/IdO9OFh.png)
+
+
 ## Requirement
 * python 3.6.8
 * django 2.2.9
