@@ -36,6 +36,32 @@ python manage.py runserver
 ```bash
 python manage.py qcluster
 ```
+
+## ORM design
+
+### Product
+
+| field | type |
+| ------ | ------ |
+| *product_id |Char |
+| stock_pcs | Integer |
+| price | [Integer |
+| shop_id | String |
+| vip | [Boolean |
+
+### Order
+
+| field | type |
+| ------ | ------ |
+| *id |UUID |
+| product_id | Char |
+| qty | [Integer |
+| price | Integer |
+| shop_id | String |
+| c_id | Char |
+
+**Note:** `c_id` is Customer ID that record who orders the product.
+
 ## Decorator module
 
 ### 1. credential check
