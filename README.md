@@ -47,7 +47,7 @@ python manage.py qcluster
 | stock_pcs | Integer |
 | price | Integer |
 | shop_id | String |
-| vip | [Boolean |
+| vip | Boolean |
 
 ### Order
 
