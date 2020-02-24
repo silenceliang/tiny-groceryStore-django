@@ -1,5 +1,5 @@
 from .models import Product, Order
-from .decorators import requires_csrf_token, vip_required, qty_enough
+from .decorators import requires_csrf_token, vip_required, qty_enough, dummy_json
 
 from django.shortcuts import render
 from django.conf import settings
@@ -46,58 +46,58 @@ class BackendView(TemplateView):
 @qty_enough
 @requires_csrf_token
 def add2order(request, notisify=False):
-    data = json.loads(request.body.decode())
-    p_obj = Product.objects.get(p_id=data['product_id'])
-    p_obj.s_pcs -= int(data['qty'])
-    p_obj.save()
+    data = request.json
+    try:
+        p_obj = Product.objects.get(p_id=data['product_id'])
+        p_obj.s_pcs -= int(data['qty'])
+        p_obj.save()
 
-    order = Order(
-        p_id=data['product_id'],
-        qty=data['qty'],
-        price=p_obj.price,
-        s_id=p_obj.s_id,
-        c_id=data['customer_id'])
-    order.save()
+        order = Order(
+            p_id=data['product_id'],
+            qty=data['qty'],
+            price=p_obj.price,
+            s_id=p_obj.s_id,
+            c_id=data['customer_id'])
+        order.save()
 
     # --- client View ---
     # singleCustomerOrder = Ordedata.objects.filter(c_id=data['customer_id'])
     # for singleOrder in singleCdatastomerOrder:
     #     print(singleOrder)
     # return_order = serialize('json', order)
-
-    res = model_to_dict(order)
-    res['status'] = True
-    
-    return JsonResponse(res)
+        res = model_to_dict(order)
+        res['status'] = True
+        return JsonResponse(res)
+    except:
+        raise Exception('Load database failed')
 
 @qty_enough
 @requires_csrf_token
 def delFromOrder(request, notisify=False):
-    data = json.loads(request.body.decode())
-    # true stock
-    o_obj = Order.objects.get(o_id=uuid.UUID(data['o_id']))
+    data = request.json
+    try:
+        o_obj = Order.objects.get(o_id=uuid.UUID(data['o_id']))
 
-    data = {
-        'status': True,
-        'p_id': o_obj.p_id,
-        'qty': o_obj.qty,
-        'notice': notisify
-    }
-    # update current product quantity.
-    p_obj = Product.objects.get(p_id=data['p_id'])
-    p_obj.s_pcs += data['qty']
-    p_obj.save()
-    # delete this order.
-    o_obj.delete()
+        data = {
+            'status': True,
+            'p_id': o_obj.p_id,
+            'qty': o_obj.qty,
+            'notice': notisify
+        }
+        # update current product quantity.
+        p_obj = Product.objects.get(p_id=data['p_id'])
+        p_obj.s_pcs += data['qty']
+        p_obj.save()
+        # delete this order.
+        o_obj.delete()
 
-    return JsonResponse(data)
+        return JsonResponse(data)
+    except:
+        raise Exception('Load database failed')
+    
 
 @requires_csrf_token
 def findTop3(request):
-    # schedule(func="totalGains()",schedule_type='O')
-    # schedule(func="totalSellQuantity()",schedule_type='O')
-    # schedule(func="orderNum()",schedule_type='O')   
-    
     top = Order.objects.values('p_id').order_by('p_id').annotate(total_sell=Sum('qty'))[:3]
     return JsonResponse({'results': list(top)})
 
