@@ -2,7 +2,7 @@
 
 ## Screen Shot
 
-![](https://i.imgur.com/IdO9OFh.png)
+![](https://i.imgur.com/iDulepW.png)
 
 
 ## Requirement
