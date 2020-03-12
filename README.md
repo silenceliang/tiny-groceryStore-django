@@ -13,10 +13,10 @@ This project is simply demonstrate how interact with database using django frame
   * [Task](#task)
     + [set your schedule in url `/Admin`](#set-your-schedule-in-url---admin-)
     + [Run django-q to schedule your task](#run-django-q-to-schedule-your-task)
-  * [ORM design](#orm-design)
+  * [ORM Design](#orm-design)
     + [Product](#product)
     + [Order](#order)
-  * [Decorator design](#decorator-design)
+  * [Decorator Wrapper](#decorator-design)
     + [1. credential check](#1-credential-check)
     + [2. stock quantity](#2-stock-quantity)
 
