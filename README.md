@@ -1,36 +1,39 @@
 # DjangoProject
+This project is simply demonstrate how interact with database using django framework in python. Here we utilize ORM objects for CRUD in OOP way, and meanwhile use the decorator wrappers that make handmade script more readable.
 
-## Screen Shot
+## Dependencies
+* Python 3 (tested on python 3.6.8)
 
+## Requirements
+* django==2.2.9
+* django-q==1.1.0
+* django-bootstrap3==12.0.3
+* django-bootstrap4==1.1.1
+* django-tables2==2.2.1
+
+## Snapshot
 ![](https://i.imgur.com/iDulepW.png)
-
-
-## Requirement
-* python 3.6.8
-* django 2.2.9
-* django-q 1.1.0
 
 ## Usage
 
-### 0) To begin using the virtual environment, it needs to be activated
+### To begin using the virtual environment, it needs to be activated
 ```bash
 source bin/activate
 ```
 
-### 1) Synchronizes the database state with the current set of models and migrations
+### Synchronizes the database state with the current set of models and migrations
 ```bash
 python manage.py migrate --run-syncdb
 
 ```
-### 2) Start our django application
+### Start our django application
 ```bash
 python manage.py runserver
 ```
 
-## Tasks
+## Task
 
 ### set your schedule in url `/Admin`
-
 
 ### Run django-q to schedule your task
 ```bash
@@ -62,7 +65,7 @@ python manage.py qcluster
 
 **Note:** `c_id` is Customer ID that record who orders the product.
 
-## Decorator module
+## Decorator design
 
 ### 1. credential check
 
