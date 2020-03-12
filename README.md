@@ -88,9 +88,9 @@ python manage.py qcluster
 
 **Note:** `c_id` is Customer ID that record who orders the product.
 
-## Decorator Design
+## Decorator Wrapper
 
-### 1. credential check
+### credential check
 
 ```python
 def vip_required(func):
@@ -107,7 +107,7 @@ def vip_required(func):
             return func(request)
     return wrap
 ``` 
-### 2. stock quantity 
+### stock quantity 
 ```python
 def qty_enough(func):
     @functools.wraps(func)
