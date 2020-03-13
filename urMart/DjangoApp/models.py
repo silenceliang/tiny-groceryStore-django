@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 import uuid
 # Create your models here.
+
 class Product(models.Model):
 
     p_id = models.CharField(primary_key=True, unique=True, max_length=1)
@@ -11,7 +12,7 @@ class Product(models.Model):
     vip = models.BooleanField(default=False)
     
     def get_absolute_url(self):
-        return reverse('add-to-order')
+        return reverse('product-details')
 
     def __str__(self):
         return '%s' % (self.p_id)
@@ -24,6 +25,9 @@ class Order(models.Model):
     price = models.IntegerField()
     s_id = models.TextField()
     c_id = models.CharField(max_length=10)
+
+    def get_absolute_url(self):
+        return reverse('order-details')
 
     def __str__(self):
         return '%s, %s' % (self.o_id, self.p_id)
