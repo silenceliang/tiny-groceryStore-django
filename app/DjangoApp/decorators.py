@@ -1,5 +1,4 @@
 from .models import Product, Order
-
 from django.views.decorators.csrf import requires_csrf_token
 from django.http import JsonResponse
 

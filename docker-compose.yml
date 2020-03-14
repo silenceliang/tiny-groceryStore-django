@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  app:
+    container_name: django-app-container
+    build: ./app
+    command: uwsgi --ini uwsgi.ini
+    volumes:
+      - dj_data:/djangoapp
+  nginx:
+    container_name: nginx-container
+    build: ./nginx
+    volumes:
+      - ./log:/var/log/nginx
+    ports:
+      - '80:80'
+    depends_on:
+      - app
+
+volumes:
+  dj_data:
