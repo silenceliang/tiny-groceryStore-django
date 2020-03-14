@@ -53,6 +53,11 @@ python manage.py migrate --run-syncdb
 ```bash
 python manage.py runserver
 ```
+### Run tests in django
+```bash
+python manage.py test
+```
+
 
 ## Task
 
