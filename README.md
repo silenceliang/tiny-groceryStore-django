@@ -1,5 +1,5 @@
 # DjangoProject
-This project is simply demonstrate how interact with database using django framework in python. Here we utilize ORM objects for CRUD in OOP way, and meanwhile use the decorator wrappers that make handmade script more readable.
+This project simply demonstrates how to interact with database using django framework in python. Here we utilize ORM objects for CRUD in OOP way, and meanwhile we use the decorator-wrappers that make whole scripts more readable.
 
 # Table Content
 - [DjangoProject](#djangoproject)
