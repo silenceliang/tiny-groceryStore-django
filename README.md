@@ -39,11 +39,6 @@ This project simply demonstrates how to interact with database using django fram
 
 ## Usage
 
-### To begin using the virtual environment, it needs to be activated
-```bash
-source bin/activate
-```
-
 ### Synchronizes the database state with the current set of models and migrations
 ```bash
 python manage.py migrate --run-syncdb
