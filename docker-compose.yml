@@ -4,9 +4,11 @@ services:
   app:
     container_name: django-app-container
     build: ./app
-    command: uwsgi --ini uwsgi.ini
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - dj_data:/djangoapp
+
+
   nginx:
     container_name: nginx-container
     build: ./nginx
