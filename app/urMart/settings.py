@@ -25,7 +25,8 @@ SECRET_KEY = 'psqr$p5jyl*3qn^s&9+t+yfacjj&z=%zgnd$$_!@gwq3ss1!o0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# approve nginx connect
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
