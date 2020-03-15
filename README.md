@@ -67,24 +67,24 @@ python manage.py qcluster
 
 ### Product
 
-| field | type |
+| field | description |
 | ------ | ------ |
-| *product_id |Char |
-| stock_pcs | Integer |
-| price | Integer |
-| shop_id | String |
-| vip | Boolean |
+| *product_id | id of product |
+| stock_pcs | quantity of product |
+| price | cost of product |
+| shop_id | where the product have sold |
+| vip | need credential or not |
 
 ### Order
 
-| field | type |
+| field | description |
 | ------ | ------ |
-| *id |UUID |
-| product_id | Char |
-| qty | [Integer |
-| price | Integer |
-| shop_id | String |
-| c_id | Char |
+| *id | uuid of product |
+| product_id | id of product |
+| qty | number of order |
+| price | total bill of the order |
+| shop_id | where we have made the order |
+| c_id | id of customer  |
 
 **Note:** `c_id` is Customer ID that record who orders the product.
 
