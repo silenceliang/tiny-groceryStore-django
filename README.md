@@ -1,24 +1,26 @@
 # DjangoProject
 This project simply demonstrates how to interact with database using django framework in python. Here we utilize ORM objects for CRUD in OOP way, and meanwhile we use the decorator-wrappers that make whole scripts more readable.
 
-# Table Content
+## Table Content
+
 - [DjangoProject](#djangoproject)
   * [Dependencies](#dependencies)
   * [Requirements](#requirements)
   * [Snapshot](#snapshot)
   * [Usage](#usage)
-    + [To begin using the virtual environment, it needs to be activated](#to-begin-using-the-virtual-environment--it-needs-to-be-activated)
     + [Synchronizes the database state with the current set of models and migrations](#synchronizes-the-database-state-with-the-current-set-of-models-and-migrations)
     + [Start our django application](#start-our-django-application)
+    + [Run tests in django](#run-tests-in-django)
+  * [Deployment](#deployment)
   * [Task](#task)
     + [set your schedule in url `/Admin`](#set-your-schedule-in-url---admin-)
     + [Run django-q to schedule your task](#run-django-q-to-schedule-your-task)
   * [ORM Design](#orm-design)
     + [Product](#product)
     + [Order](#order)
-  * [Decorator Wrapper](#decorator-design)
-    + [1. credential check](#1-credential-check)
-    + [2. stock quantity](#2-stock-quantity)
+  * [Decorator Wrapper](#decorator-wrapper)
+    + [vip credential](#vip-credential)
+    + [stock quantity](#stock-quantity)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -53,6 +55,11 @@ python manage.py runserver
 python manage.py test
 ```
 
+## Deployment
+
+```bash
+docker-compose up
+```
 
 ## Task
 
