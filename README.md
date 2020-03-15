@@ -94,9 +94,10 @@ python manage.py qcluster
 
 ```python
 def vip_required(func):
-    @functools.wraps(func)
-    def wrap(request, *args,**kargs):
-        data = json.loads(request.body.decode()) # order data
+    @dummy_json
+    @wraps(func)
+    def wrapper(request, *args,**kargs):
+        data = request.json
         p_obj = Product.objects.get(p_id=data['product_id'])
         p_obj.vip = bool(data['prod_vip'])
 
@@ -105,14 +106,15 @@ def vip_required(func):
             return JsonResponse({'status':False, 'message':'You are not allowed to order this product.'}, status=201)
         else:
             return func(request)
-    return wrap
+    return wrapper
 ``` 
 ### stock quantity 
 ```python
 def qty_enough(func):
-    @functools.wraps(func)
-    def wrap(request, *args,**kargs):
-        data = json.loads(request.body.decode())
+    @dummy_json
+    @wraps(func)
+    def wrapper(request, *args,**kargs):
+        data = request.json
         p_obj = Product.objects.get(p_id=data['product_id'])
         notisify = False
         actions = data['action']
@@ -127,6 +129,6 @@ def qty_enough(func):
             return JsonResponse({'status':False, 'message':'There is out of stock.'}, status=201)
         return func(request,notisify=notisify)
     
-    return wrap
+    return wrapper    
 ```    
 
