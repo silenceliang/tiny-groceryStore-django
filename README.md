@@ -63,7 +63,7 @@ docker-compose up
 
 ## Task
 
-### set your schedule in url `/Admin`
+### Set your schedule in url `/Admin`
 
 ### Run django-q to schedule your task
 ```bash
@@ -92,8 +92,6 @@ python manage.py qcluster
 | price | total bill of the order |
 | shop_id | where we have made the order |
 | c_id | id of customer  |
-
-**Note:** `c_id` is Customer ID that record who orders the product.
 
 ## Decorator Wrapper
 
