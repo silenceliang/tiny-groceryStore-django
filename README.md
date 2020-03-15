@@ -90,7 +90,8 @@ python manage.py qcluster
 
 ## Decorator Wrapper
 
-### credential check
+### vip credential
+members without vip credential  cannot order an item authorized with vip.
 
 ```python
 def vip_required(func):
