@@ -1,7 +1,7 @@
 arrow==0.15.5
 beautifulsoup4==4.8.2
 blessed==1.17.2
-Django==2.2.9
+Django==2.2.22
 django-bootstrap3==12.0.3
 django-bootstrap4==1.1.1
 django-picklefield==2.1.1
@@ -16,7 +16,7 @@ wcwidth==0.1.8
 arrow==0.15.5
 beautifulsoup4==4.8.2
 blessed==1.17.2
-Django==2.2.9
+Django==2.2.22
 django-bootstrap3==12.0.3
 django-bootstrap4==1.1.1
 django-picklefield==2.1.1
